@@ -68,31 +68,10 @@ var blueIcon = new L.Icon({
 //CartoDB_Positron.addTo(mymap);
 
 
-$.getJSON("suffra2.json", function (data) {
+$.getJSON("csvjson.json", function (data) {
   data.forEach(function (location) {
     //console.log(location)
-    var m = L.marker([location.lat, location.lng], { icon: blueIcon }).addTo(mymap);
-
-
-
-    m.setBouncingOptions({
-      bounceHeight: 20,    // height of the bouncing
-      bounceSpeed: 50,    // bouncing speed coefficient
-      exclusive: true,  // if this marker bouncing all others must stop
-    }).on('click', function () {
-
-      resetAllMarkers();
-      this.toggleBouncing();
-      if (this.isBouncing()) {
-        this.setIcon(redIcon);
-        showSidebar(location);
-      }
-      else {
-        resetAllMarkers();
-        this.setIcon(blueIcon);
-        hideSideBar();
-      }
-    });
+   
 
 
     /*  var popup = L.popup({
@@ -103,6 +82,45 @@ $.getJSON("suffra2.json", function (data) {
 
 
     //popup._updateLayout();
+  })
+});
+
+
+$.getJSON("csvjson.json", function (data) {
+  data.forEach(function (location) {
+     
+      var osgb = new GT_OSGB();
+
+      var gr = location["Grid Ref"];
+    if (osgb.parseGridRef(gr))
+    {
+          location.wgs84 = osgb.getWGS84();
+          console.log(location)
+          var m = L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: blueIcon }).addTo(mymap);
+
+
+
+      m.setBouncingOptions({
+        bounceHeight: 20,    // height of the bouncing
+        bounceSpeed: 50,    // bouncing speed coefficient
+        exclusive: true,  // if this marker bouncing all others must stop
+      }).on('click', function () {
+  
+        resetAllMarkers();
+        this.toggleBouncing();
+        if (this.isBouncing()) {
+          this.setIcon(redIcon);
+          showSidebar(location);
+        }
+        else {
+          resetAllMarkers();
+          this.setIcon(blueIcon);
+          hideSideBar();
+        }
+      });
+      }
+
+      
   })
 });
 

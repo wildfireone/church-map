@@ -1,200 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
 
-<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+      
+        <title>The Aberdeen Women’s Suffrage Campaign</title>
+      
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+      
+      
+        <!-- Custom styles for this template -->
+        <link href="css/main.css" rel="stylesheet">
+      
+      </head>
+      
+      <body>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>The Aberdeen Women’s Suffrage Campaign</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-
-
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
-
-
-  <!-- Custom styles for this template -->
-  <link href="css/grayscale.min.css" rel="stylesheet">
-  <link href="css/lightbox.min.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">The Aberdeen Women’s Suffrage Campaign</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#map">The Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div id="mainintro" class="mx-auto text-center">
-        <h1 class="mx-auto text-uppercase">The Aberdeen Women’s Suffrage Campaign</h1>
-        <h2 class="text-white-80 mx-auto mt-2 mb-5">“We are prepared to take extreme measures like the others but we
-          must, as the independent Aberdeen WSPU, be the judges as to when & where that action is politic…. In London,
-          at a distance, these … local matters cannot be appreciated, but they are often the things that matter a great
-          deal.” - Caroline Phillips, Honorary Secretary of the Aberdeen branch of the WSPU 1907</h2>
-        <a href="#about" class="btn btn-primary js-scroll-trigger">More Info</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2 class="text-white mb-4 text-center">Who Were the Aberdeen Suffragists and Suffragettes?</h2>
-
-          <p class="text-white-70 text-justify">Women in Britain first started large‐scale campaigning for the vote in
-            the 1860s. The Aberdeen Women’s Suffrage Association was set up in the 1870s, campaigning amongst other
-            things to get women elected to the city School Board. However, this limited amount of civic responsibility
-            only whetted women’s appetites for the Parliamentary vote, which was still firmly denied to them.</p>
-          <p class="text-white-70 text-justify">By the start of the 20th century the Aberdeen Association was affiliated
-            to the National Union of Women’s Suffrage Societies (NUWSS). These campaigners are known as ‘constitutional
-            suffragists’ – they aimed to achieve the vote through peaceful campaigning, petitions and letters to MPs.
-          </p>
-          <p class="text-white-70 text-justify">Growing frustration with the situation finally prompted Emmeline
-            Pankhurst, the widow of a socialist politician from Manchester, to establish a new kind of suffrage
-            organisation. Working with her daughters Christabel, Adela and Sylvia, and others from her socialist circle
-            in Manchester, Mrs
-            Pankhurst established the Women’s Social and Political Union (WSPU) in 1903. The WSPU aimed to raise the
-            profile of the question of women’s suffrage, including in the press, and to make women campaigners more
-            visible. The Daily Mail called them the Suffragettes to distinguish them from the NUWSS.</p>
-          <p class="text-white-70 text-justify">An Aberdeen branch of the WSPU had been set up by 1907. From then until
-            early 1909 its honorary secretary was the journalist Caroline Phillips. You can learn more about Phillips
-            and the archive of her correspondence held in Aberdeen <a
-              href='https://openair.rgu.ac.uk/bitstream/handle/10059/2588/PEDERSEN%202017%20Caroline%20Phillips.pdf?sequence=1&isAllowed=y'>here</a>
-          </p>
-
-        </div>
-      </div>
-      <img src="img/castlegatenight2.jpeg" class="img-fluid" alt="">
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="map" class="projects-section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2 class="text-black-70 mb-4 text-center">Mapping Aberdeen’s suffragists and suffragettes</h2>
-
-          <p class="text-black-70 text-justify">
-            The aim of this website it to map the locations of suffragist and suffragette activity throughout the city
-            and Aberdeenshire.
-            Each point on the map indicates at least one suffrage-related event. Some locations, such as the Aberdeen
-            Music Hall, saw many different events. Clicking each link will give you further information about what
-            happened and who was involved.
-            We aim to cover the suffrage campaigns of the constitutional suffragists, such as the national Union of
-            Women’s Suffrage Societies (NUWSS), and the militant suffragettes, such as the Women’s Social and Political
-            Union (WSPU) and the Women’s Freedom League (WFL).
-          </p>
-
-        </div>
-      </div>
-      <div class="row">
-      <div id="mapid" class="col-md-12"></div>
-      <div id="sidebar" class="col-md-0"></div>
-    </div>
-    </div>
-  </section>
-   <!-- Contact Section -->
-  <section id="contact" class="contact-section bg-black">
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Professor</br> Sarah Pedersen</h4> 
-              <h6 class="m-0"></h5class>Robert Gordon University</h6>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="#">s.pedersen@rgu.ac.uk</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-8 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <h4 class="m-0">If you know of a suffrage event that we have not covered, please get in contact</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <div class="container">
-      Copyright &copy; WildFireOne 
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-  <script type="text/javascript" src="js/leaflet.smoothmarkerbouncing.js" />
-
-  <!-- Custom scripts for this template -->
-  <script src="js/grayscale.min.js"></script>
-  
-  <script src="js/lightbox.js"></script>
-  <script src="js/map.js"></script>
-
-
-</body>
-
+          <div id="mapid"></div>
+          <div id="sidebar"></div>
+          <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+          integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+          crossorigin=""></script>
+          <script type="text/javascript" src="js/leaflet.smoothmarkerbouncing.js"></script> 
+          <script language="javascript" src="js/geotools2.js"></script>
+          <script src="js/map.js"></script>
+         <!-- <script src="js/test.js"></script>-->
+      </body>
 </html>
+
+
+
