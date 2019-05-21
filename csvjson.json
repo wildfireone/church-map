@@ -52,7 +52,7 @@
     "NPOR Church": "Residence of Campbell-Muir",
     "Full Name": "Lochawe, Residence of Campbell-Muir",
     "Post Code": "PA33 1AQ",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1880
   },
   {
@@ -84,7 +84,7 @@
     "NPOR Church": "St. James the Great Episcopal",
     "Full Name": "Stonehaven , St. James the Great Episcopal",
     "Post Code": "",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1881
   },
   {
@@ -116,7 +116,7 @@
     "NPOR Church": "St Ternan's",
     "Full Name": "Muchalls, St Ternan's",
     "Post Code": "AB31 5TB",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1882
   },
   {
@@ -276,7 +276,7 @@
     "NPOR Church": "Ternan East Parish",
     "Full Name": "Banchory , Ternan East Parish",
     "Post Code": "AB31 5YP",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1887
   },
   {
@@ -300,7 +300,7 @@
     "NPOR Church": "St Conan's",
     "Full Name": "Lochawe, St Conan's",
     "Post Code": "PA33 1AQ",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1880
   },
   {
@@ -316,7 +316,7 @@
     "NPOR Church": "Mortlach Parish",
     "Full Name": "Dufftown, Mortlach Parish",
     "Post Code": "AB55 4BR",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1888
   },
   {
@@ -340,7 +340,7 @@
     "NPOR Church": "Cockpen (and Carrington",
     "Full Name": "Newtongrange, Cockpen (and Carrington",
     "Post Code": "EH19 3HU",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1888
   },
   {
@@ -548,7 +548,7 @@
     "NPOR Church": "All Saints' Episcopal",
     "Full Name": "Strichen, All Saints' Episcopal",
     "Post Code": "AB43 6TT",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1893
   },
   {
@@ -580,7 +580,7 @@
     "NPOR Church": "St Mary's Episcopal",
     "Full Name": "Arbroath, St Mary's Episcopal",
     "Post Code": "",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1895
   },
   {
@@ -692,7 +692,7 @@
     "NPOR Church": "United Free",
     "Full Name": "Peterhead, United Free",
     "Post Code": "AB42 3AS",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1898
   },
   {
@@ -716,7 +716,7 @@
     "NPOR Church": "Kinnoull Street Congregational",
     "Full Name": "Perth, Kinnoull Street Congregational",
     "Post Code": "PH1 5EN",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1899
   },
   {
@@ -812,7 +812,7 @@
     "NPOR Church": "",
     "Full Name": "Cairnie,",
     "Post Code": "AB54 4TR",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1902
   },
   {
@@ -852,7 +852,7 @@
     "NPOR Church": "St George's Free",
     "Full Name": "Montrose, St George's Free",
     "Post Code": "DD10 8EW",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1902
   },
   {
@@ -908,7 +908,7 @@
     "NPOR Church": "Cruden Parish",
     "Full Name": "Cruden, Cruden Parish",
     "Post Code": "AB42 0QB",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1903
   },
   {
@@ -932,7 +932,7 @@
     "NPOR Church": "St.Stephen's Parish",
     "Full Name": "Inverness, St.Stephen's Parish",
     "Post Code": "IV2 4XA",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1903
   },
   {
@@ -940,7 +940,7 @@
     "NPOR Church": "Dunnottar Church",
     "Full Name": "Stonehaven , Dunnottar Church",
     "Post Code": "AB39 3XL",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1903
   },
   {
@@ -948,7 +948,7 @@
     "NPOR Church": "Banchory St Ternan Episcopal Church",
     "Full Name": "Banchory , Banchory St Ternan Episcopal Church",
     "Post Code": "AB31 5YP",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1904
   },
   {
@@ -996,7 +996,7 @@
     "NPOR Church": "Masonic Temple",
     "Full Name": "Aberdeen, Masonic Temple",
     "Post Code": "AB11 6ET",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1906
   },
   {
@@ -1004,7 +1004,7 @@
     "NPOR Church": "Invergowrie Parish Church",
     "Full Name": "Invegowrie, Invergowrie Parish Church",
     "Post Code": "",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1934
   },
   {
@@ -1060,7 +1060,7 @@
     "NPOR Church": "Parish",
     "Full Name": "Insch, Parish",
     "Post Code": "AB52 6JR",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1907
   },
   {
@@ -1092,7 +1092,7 @@
     "NPOR Church": "Parish",
     "Full Name": "Rathven, Parish",
     "Post Code": "AB56 4DD",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1908
   },
   {
@@ -1116,7 +1116,7 @@
     "NPOR Church": "St Laurence Episcopal",
     "Full Name": "Laurencekirk, St Laurence Episcopal",
     "Post Code": "AB30 1BH",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1909
   },
   {
@@ -1124,7 +1124,7 @@
     "NPOR Church": "St Andrew's United Free",
     "Full Name": "Turriff, St Andrew's United Free",
     "Post Code": "AB53 4DP",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1910
   },
   {
@@ -1204,7 +1204,7 @@
     "NPOR Church": "Ythanwells Church",
     "Full Name": "Huntly, Ythanwells Church",
     "Post Code": "AB54 6HD",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1912
   },
   {
@@ -1228,7 +1228,7 @@
     "NPOR Church": "St Machar's",
     "Full Name": "Aboyne, St Machar's",
     "Post Code": "AB34 5HJ",
-    "Status": "Yes+",
+    "Status": "Yes",
     "Comp Year": 1915
   },
   {
@@ -1364,7 +1364,7 @@
     "NPOR Church": "Crown Terrace Baptist",
     "Full Name": "Aberdeen, Crown Terrace Baptist",
     "Post Code": "AB11 6HE",
-    "Status": "Yes-",
+    "Status": "Yes",
     "Comp Year": 1932
   },
   {

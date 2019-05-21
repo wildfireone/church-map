@@ -44,8 +44,8 @@ var baseMaps = {
 L.control.layers(baseMaps).addTo(mymap);
 
 var redIcon = new L.Icon({
-  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: '../img/marker-icon-red.png',
+  shadowUrl: '../img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -53,8 +53,34 @@ var redIcon = new L.Icon({
 });
 
 var blueIcon = new L.Icon({
-  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconUrl: '../img/marker-icon-blue.png',
+  shadowUrl: '../img/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+var greenIcon = new L.Icon({
+  iconUrl: '../img/marker-icon-green.png',
+  shadowUrl: '../img/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+var yellowIcon = new L.Icon({
+  iconUrl: '../img/marker-icon-yellow.png',
+  shadowUrl: '../img/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+var purpleIcon = new L.Icon({
+  iconUrl: '../img/marker-icon-violet.png',
+  shadowUrl: '../img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -95,8 +121,28 @@ $.getJSON("csvjson.json", function (data) {
     if (osgb.parseGridRef(gr))
     {
           location.wgs84 = osgb.getWGS84();
-          console.log(location)
-          var m = L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: blueIcon }).addTo(mymap);
+          //console.log(location.Status)
+          var m;
+          
+          if(location.Status.toLowerCase() == "yes"){
+              m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: greenIcon }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "scrap" || location.Status.toLowerCase() == "unknown" ){
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: redIcon }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "overhaul"){
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: purpleIcon }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "moved"){
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: yellowIcon }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "rebuild"){
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: blueIcon }).addTo(mymap);
+          }
+
+
+          m.bindPopup(location["Full Name"])
+	        .openPopup();
 
 
 
@@ -109,12 +155,12 @@ $.getJSON("csvjson.json", function (data) {
         resetAllMarkers();
         this.toggleBouncing();
         if (this.isBouncing()) {
-          this.setIcon(redIcon);
+          //this.setIcon(redIcon);
           showSidebar(location);
         }
         else {
           resetAllMarkers();
-          this.setIcon(blueIcon);
+          //this.setIcon(blueIcon);
           hideSideBar();
         }
       });
@@ -134,7 +180,7 @@ resetAllMarkers = function () {
   var marker;
   L.Marker._bouncingMarkers.forEach(function(marker){
     marker._bouncingMotion.isBouncing = false;
-    marker.setIcon(blueIcon);   // stop bouncing
+   // marker.setIcon(blueIcon);   // stop bouncing
   });
 
 };
