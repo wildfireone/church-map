@@ -53,8 +53,8 @@ var redIcon = new L.Icon({
 });
 
 var blueIcon = new L.Icon({
-  iconUrl: '../img/marker-icon-blue.png',
-  shadowUrl: '../img/marker-shadow.png',
+  iconUrl: 'img/marker-icon-blue.png',
+  shadowUrl: 'img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -62,8 +62,8 @@ var blueIcon = new L.Icon({
 });
 
 var greenIcon = new L.Icon({
-  iconUrl: '../img/marker-icon-green.png',
-  shadowUrl: '../img/marker-shadow.png',
+  iconUrl: 'img/marker-icon-green.png',
+  shadowUrl: 'img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -71,16 +71,16 @@ var greenIcon = new L.Icon({
 });
 
 var yellowIcon = new L.Icon({
-  iconUrl: '../img/marker-icon-yellow.png',
-  shadowUrl: '../img/marker-shadow.png',
+  iconUrl: 'img/marker-icon-yellow.png',
+  shadowUrl: 'img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
 var purpleIcon = new L.Icon({
-  iconUrl: '../img/marker-icon-violet.png',
-  shadowUrl: '../img/marker-shadow.png',
+  iconUrl: 'img/marker-icon-violet.png',
+  shadowUrl: 'img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
