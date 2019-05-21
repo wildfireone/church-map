@@ -29,16 +29,26 @@ var OldMaps = L.tileLayer('http://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
   subdomains: '0123'
 });
 
-var mymap = L.map('mapid', {
+var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+
+/* var mymap = L.map('mapid', {
   center: [57.1497, -2.0943],
   zoom: 13,
   layers: [ OldMaps,CartoDB_Positron]
+}); */
+var mymap = L.map('mapid', {
+  center: [57.1497, -2.0943],
+  zoom: 13,
+  layers: [OldMaps,OpenStreetMap_Mapnik]
 });
 
 var baseMaps = {
   
   "Histroic": OldMaps,
-  "Modern": CartoDB_Positron
+  "Modern": OpenStreetMap_Mapnik
 };
 
 L.control.layers(baseMaps).addTo(mymap);
@@ -89,39 +99,20 @@ var purpleIcon = new L.Icon({
 
 
 
+$.getJSON("churches.json", function (data) {
 
-
-//CartoDB_Positron.addTo(mymap);
-
-
-$.getJSON("csvjson.json", function (data) {
-  data.forEach(function (location) {
-    //console.log(location)
-   
-
-
-    /*  var popup = L.popup({
-       maxHeight: 200,
-       closeOnClick: false,
-       keepInView: true
-     }); */
-
-
-    //popup._updateLayout();
-  })
-});
-
-
-$.getJSON("csvjson.json", function (data) {
+  //var locations =[];
   data.forEach(function (location) {
      
-      var osgb = new GT_OSGB();
+      //var osgb = new GT_OSGB();
 
-      var gr = location["Grid Ref"];
-    if (osgb.parseGridRef(gr))
-    {
-          location.wgs84 = osgb.getWGS84();
+      //var gr = location["Grid Ref"];
+    //if (osgb.parseGridRef(gr))
+    //{
+          //location.wgs84 = osgb.getWGS84();
           //console.log(location.Status)
+          //locations.push(location);
+       
           var m;
           
           if(location.Status.toLowerCase() == "yes"){
@@ -164,10 +155,11 @@ $.getJSON("csvjson.json", function (data) {
           hideSideBar();
         }
       });
-      }
+     // }
 
       
   })
+  //console.log(JSON.stringify(locations));
 });
 
 //$('#mapid').click(function(){
