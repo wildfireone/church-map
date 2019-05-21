@@ -44,8 +44,8 @@ var baseMaps = {
 L.control.layers(baseMaps).addTo(mymap);
 
 var redIcon = new L.Icon({
-  iconUrl: '../img/marker-icon-red.png',
-  shadowUrl: '../img/marker-shadow.png',
+  iconUrl: 'img/marker-icon-red.png',
+  shadowUrl: 'img/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
