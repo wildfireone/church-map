@@ -97,6 +97,50 @@ var purpleIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+var sredIcon = new L.Icon({
+  iconUrl: 'img/marker-icon-red.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [12, 20],
+  iconAnchor: [6, 20],
+  popupAnchor: [1, -34],
+  shadowSize: [20, 20]
+});
+
+var sblueIcon = new L.Icon({
+  iconUrl: 'img/marker-icon-blue.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [12, 20],
+  iconAnchor: [6, 20],
+  popupAnchor: [1, -34],
+  shadowSize: [20, 20]
+});
+
+var sgreenIcon = new L.Icon({
+  iconUrl: 'img/marker-icon-green.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [12, 20],
+  iconAnchor: [6, 20],
+  popupAnchor: [1, -34],
+  shadowSize: [20, 20]
+});
+
+var syellowIcon = new L.Icon({
+  iconUrl: 'img/marker-icon-yellow.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [12, 20],
+  iconAnchor: [6, 20],
+  popupAnchor: [1, -34],
+  shadowSize: [20, 20]
+});
+var spurpleIcon = new L.Icon({
+  iconUrl: 'img/marker-icon-violet.png',
+  shadowUrl: 'img/marker-shadow.png',
+  iconSize: [12, 20],
+  iconAnchor: [6, 20],
+  popupAnchor: [1, -34],
+  shadowSize: [20, 20]
+});
+
 
 
 $.getJSON("churches.json", function (data) {
@@ -116,20 +160,38 @@ $.getJSON("churches.json", function (data) {
           var m;
           
           if(location.Status.toLowerCase() == "yes"){
-              m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: greenIcon }).addTo(mymap);
+              m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sgreenIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "scrap" || location.Status.toLowerCase() == "unknown" ){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: redIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sredIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "overhaul"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: purpleIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: spurpleIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "moved"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: yellowIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: syellowIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "rebuild"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: blueIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sblueIcon }).addTo(mymap);
           }
+
+
+          /* if(location.Status.toLowerCase() == "yes"){
+           
+            m= L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sgreenIcon,greenIcon, greenIcon] }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "scrap" || location.Status.toLowerCase() == "unknown" ){
+            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sredIcon,redIcon, RTCSessionDescription] }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "overhaul"){
+            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [spurpleIcon,purpleIcon, purpleIcon] }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "moved"){
+            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [syellowIcon,yellowIcon, yellowIcon] }).addTo(mymap);
+          }
+          else if(location.Status.toLowerCase() == "rebuild"){
+            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sblueIcon,blueIcon,blueIcon] }).addTo(mymap);
+          } */
 
 
           m.bindPopup(location["Full Name"])
