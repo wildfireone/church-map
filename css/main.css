@@ -20,3 +20,7 @@ html, body, #mapid {
   overflow: auto;
 }
 
+.my-label{
+  font: 4px "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+}

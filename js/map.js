@@ -29,6 +29,10 @@ var OldMaps = L.tileLayer('http://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
   subdomains: '0123'
 });
 
+var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
+
 var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -42,13 +46,13 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
 var mymap = L.map('mapid', {
   center: [57.1497, -2.0943],
   zoom: 13,
-  layers: [OldMaps,OpenStreetMap_Mapnik]
+  layers: [OldMaps,Esri_WorldTopoMap]
 });
 
 var baseMaps = {
   
   "Histroic": OldMaps,
-  "Modern": OpenStreetMap_Mapnik
+  "Modern": Esri_WorldTopoMap
 };
 
 L.control.layers(baseMaps).addTo(mymap);
@@ -144,7 +148,8 @@ var spurpleIcon = new L.Icon({
 
 
 $.getJSON("churches.json", function (data) {
-
+  var collisionLayer = L.layerGroup.collision({margin:5});
+  collisionLayer.addTo(mymap);
   //var locations =[];
   data.forEach(function (location) {
      
@@ -166,14 +171,26 @@ $.getJSON("churches.json", function (data) {
             m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sredIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "overhaul"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: spurpleIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: spurpleIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "moved"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: syellowIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: syellowIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "rebuild"){
             m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sblueIcon }).addTo(mymap);
           }
+
+          m.bindTooltip(location["Full Name"], {permanent: true, className: "my-label", offset: [0, 0] });
+          
+          collisionLayer.add( m);
+          
+       
+
+          //p = new L.Popup({ autoClose: false, closeOnClick: false })
+           //     .setContent(location["Full Name"])
+            //    .setLatLng(m.pos);
+
+          //m.bindPopup(p);
 
 
           /* if(location.Status.toLowerCase() == "yes"){
@@ -194,8 +211,8 @@ $.getJSON("churches.json", function (data) {
           } */
 
 
-          m.bindPopup(location["Full Name"])
-	        .openPopup();
+          //m.bindPopup(location["Full Name"])
+	        //.openPopup();
 
 
 
