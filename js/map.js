@@ -46,12 +46,12 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
 var mymap = L.map('mapid', {
   center: [57.1497, -2.0943],
   zoom: 13,
-  layers: [OldMaps,Esri_WorldTopoMap]
+  layers: [Esri_WorldTopoMap]
 });
 
 var baseMaps = {
   
-  "Histroic": OldMaps,
+ //"Histroic": OldMaps,
   "Modern": Esri_WorldTopoMap
 };
 
@@ -147,9 +147,36 @@ var spurpleIcon = new L.Icon({
 
 
 
+var a3Size = {
+	width: 5940,
+	height: 8410,
+	className: 'a1CssClass',
+	tooltip: 'A custom A1 size'
+}
+
+L.easyPrint({
+	title: 'My awesome print button',
+	position: 'topleft'
+}).addTo(mymap);
+
+//L.easyPrint({
+//	title: 'My awesome print button',
+//	position: 'topleft',
+//	sizeModes: ['A4Portrait', 'A4Landscape', 'Current']
+//}).addTo(mymap);
+
+//var printPlugin = L.easyPrint({
+ // position: 'topleft',
+	//hidden: false,
+	//sizeModes: ['Current']
+//}).addTo(map); 
+//printPlugin.printMap('A4Portrait', 'MyFileName');
+
+
+
 $.getJSON("churches.json", function (data) {
-  var collisionLayer = L.layerGroup.collision({margin:5});
-  collisionLayer.addTo(mymap);
+  //var collisionLayer = L.layerGroup.collision({margin:5});
+  //collisionLayer.addTo(mymap);
   //var locations =[];
   data.forEach(function (location) {
      
@@ -180,9 +207,10 @@ $.getJSON("churches.json", function (data) {
             m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sblueIcon }).addTo(mymap);
           }
 
-          m.bindTooltip(location["Full Name"], {permanent: true, className: "my-label", offset: [0, 0] });
+          m.bindTooltip(location["NPOR Church"], {permanent: true, className: "my-label", offset: [0, 0] });
           
-          collisionLayer.add( m);
+          m.addTo(mymap);
+          //collisionLayer.add( m);
           
        
 
