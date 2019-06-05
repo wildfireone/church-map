@@ -6,7 +6,6 @@ body {
 html, body, #mapid {
     height: 5940px;
     width: 8410px;
-
 }
 
 
@@ -32,5 +31,8 @@ html, body, #mapid {
   background-image: url(data:image/svg+xml;utf8;base64,PD9...go=);
 }
 
-£
+// in css 
+.easyPrintHolder .a3CssClass { 
+  background-image: url(data:image/svg+xml;utf8;base64,PD9...go=);
+}
 

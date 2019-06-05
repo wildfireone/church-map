@@ -43,10 +43,18 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
   zoom: 13,
   layers: [ OldMaps,CartoDB_Positron]
 }); */
+
+
+  var southWest = L.latLng(59.03499076414602, -1.5475702285766604),
+    northEast = L.latLng(54.54667910890574, -7.260460853576661),
+    bounds = L.latLngBounds(southWest, northEast);
+
 var mymap = L.map('mapid', {
   center: [57.1497, -2.0943],
-  zoom: 13,
-  layers: [Esri_WorldTopoMap]
+  maxBounds:bounds,
+  zoom: 7,
+  minZoom: 7,
+  layers: [CartoDB_Positron]
 });
 
 var baseMaps = {
@@ -147,23 +155,10 @@ var spurpleIcon = new L.Icon({
 
 
 
-var a3Size = {
-	width: 5940,
-	height: 8410,
-	className: 'a1CssClass',
-	tooltip: 'A custom A1 size'
-}
 
-L.easyPrint({
-	title: 'My awesome print button',
-	position: 'topleft'
-}).addTo(mymap);
 
-//L.easyPrint({
-//	title: 'My awesome print button',
-//	position: 'topleft',
-//	sizeModes: ['A4Portrait', 'A4Landscape', 'Current']
-//}).addTo(mymap);
+
+
 
 //var printPlugin = L.easyPrint({
  // position: 'topleft',
@@ -171,8 +166,12 @@ L.easyPrint({
 	//sizeModes: ['Current']
 //}).addTo(map); 
 //printPlugin.printMap('A4Portrait', 'MyFileName');
-
-
+ 
+L.easyPrint({
+	title: 'My awesome print button',
+	position: 'topleft',
+	sizeModes: ['A4Portrait', 'A4Landscape']
+}).addTo(mymap);
 
 $.getJSON("churches.json", function (data) {
   //var collisionLayer = L.layerGroup.collision({margin:5});
@@ -210,38 +209,7 @@ $.getJSON("churches.json", function (data) {
           m.bindTooltip(location["NPOR Church"], {permanent: true, className: "my-label", offset: [0, 0] });
           
           m.addTo(mymap);
-          //collisionLayer.add( m);
-          
-       
-
-          //p = new L.Popup({ autoClose: false, closeOnClick: false })
-           //     .setContent(location["Full Name"])
-            //    .setLatLng(m.pos);
-
-          //m.bindPopup(p);
-
-
-          /* if(location.Status.toLowerCase() == "yes"){
-           
-            m= L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sgreenIcon,greenIcon, greenIcon] }).addTo(mymap);
-          }
-          else if(location.Status.toLowerCase() == "scrap" || location.Status.toLowerCase() == "unknown" ){
-            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sredIcon,redIcon, RTCSessionDescription] }).addTo(mymap);
-          }
-          else if(location.Status.toLowerCase() == "overhaul"){
-            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [spurpleIcon,purpleIcon, purpleIcon] }).addTo(mymap);
-          }
-          else if(location.Status.toLowerCase() == "moved"){
-            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [syellowIcon,yellowIcon, yellowIcon] }).addTo(mymap);
-          }
-          else if(location.Status.toLowerCase() == "rebuild"){
-            m=  L.autoResizeMarker([location.wgs84.latitude, location.wgs84.longitude], { iconArray: [sblueIcon,blueIcon,blueIcon] }).addTo(mymap);
-          } */
-
-
-          //m.bindPopup(location["Full Name"])
-	        //.openPopup();
-
+         
 
 
       m.setBouncingOptions({
