@@ -3,11 +3,18 @@ body {
     padding: 0;
     margin: 0;
 }
-html, body, #mapid {
-    height: 5940px;
-    width: 8410px;
+
+#mapid,html, body  {
+  
+  height: 10000px;
+  width: 10000px;
 }
 
+/* {
+  height: 5940px;
+  width: 8410px;
+}
+ */
 
 .popupimg{
   max-width: 300px;

@@ -51,10 +51,9 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
 
 var mymap = L.map('mapid', {
   center: [57.1497, -2.0943],
-  maxBounds:bounds,
-  zoom: 7,
+  zoom: 11,
   minZoom: 7,
-  layers: [CartoDB_Positron]
+  layers: [Esri_WorldTopoMap]
 });
 
 var baseMaps = {
@@ -167,16 +166,40 @@ var spurpleIcon = new L.Icon({
 //}).addTo(map); 
 //printPlugin.printMap('A4Portrait', 'MyFileName');
  
-L.easyPrint({
-	title: 'My awesome print button',
-	position: 'topleft',
-	sizeModes: ['A4Portrait', 'A4Landscape']
-}).addTo(mymap);
+//L.easyPrint({
+//	title: 'My awesome print button',
+//	position: 'topleft',
+ // sizeModes: ['Current']
+//}).addTo(mymap);
+
+
+//L.control.browserPrint().addTo(mymap);
+
+function saveImg(){
+/* domtoimage.toBlob()
+    .then(function (blob) {
+        window.saveAs(blob, 'my-node.png');
+    }); */
+var node = document.getElementById('mapid')
+
+    domtoimage.toPng(node)
+    .then(function (dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        document.body.appendChild(img);
+        document.getElementById('mapid').style.display = "none";
+        console.log("done");
+    })
+    .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
+}
 
 $.getJSON("churches.json", function (data) {
   //var collisionLayer = L.layerGroup.collision({margin:5});
   //collisionLayer.addTo(mymap);
   //var locations =[];
+  var idno =0;
   data.forEach(function (location) {
      
       //var osgb = new GT_OSGB();
@@ -191,25 +214,29 @@ $.getJSON("churches.json", function (data) {
           var m;
           
           if(location.Status.toLowerCase() == "yes"){
-              m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sgreenIcon }).addTo(mymap);
+              m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: greenIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "scrap" || location.Status.toLowerCase() == "unknown" ){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sredIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: redIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "overhaul"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: spurpleIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: purpleIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "moved"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: syellowIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude],{ icon: yellowIcon }).addTo(mymap);
           }
           else if(location.Status.toLowerCase() == "rebuild"){
-            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: sblueIcon }).addTo(mymap);
+            m= L.marker([location.wgs84.latitude, location.wgs84.longitude], { icon: blueIcon }).addTo(mymap);
           }
-
-          m.bindTooltip(location["NPOR Church"], {permanent: true, className: "my-label", offset: [0, 0] });
+          idno++;
+          m.bindTooltip(""+idno, {permanent: true, className: "my-label", offset: [0, 0] });
           
           m.addTo(mymap);
-         
+          
+          //var locationtext = "<p>"+idno+": "+location['Full Name']+" completed: "+location['Comp Year']+"</p>";
+
+
+          //$('#sidebar').append(locationtext);
 
 
       m.setBouncingOptions({
