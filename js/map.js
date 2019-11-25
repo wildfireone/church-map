@@ -40,7 +40,7 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
   layers: [ OldMaps,CartoDB_Positron]
 }); */
 var mymap = L.map('mapid', {
-  center: [57.1497, -2.0943],
+  center: [56.96365, -2.21177],
   zoom: 13,
   layers: [OldMaps,OpenStreetMap_Mapnik]
 });
@@ -51,7 +51,13 @@ var baseMaps = {
   "Modern": OpenStreetMap_Mapnik
 };
 
+
+
 L.control.layers(baseMaps).addTo(mymap);
+
+L.easyButton( 'fa-home', function(){
+  window.history.back();
+}).addTo(mymap);
 
 var redIcon = new L.Icon({
   iconUrl: 'img/marker-icon-red.png',
@@ -160,6 +166,7 @@ $.getJSON("churches.json", function (data) {
       
   })
   //console.log(JSON.stringify(locations));
+  mymap.setView([56.96365, -2.21177],13);
 });
 
 //$('#mapid').click(function(){
